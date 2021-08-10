@@ -1,27 +1,18 @@
-# AngularFriendappConsolidation
+Remaking the Angular exercise.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+Smooth start, but first issue with the FormsModule ngModel. Had some syntax issues I wasted quite some time to fix (NgModel instead of ngModel).
 
-## Development server
+Weird issue : when I named my languagearray in app.component.ts languageArr I constantly got the "property not found on app.component.ts"
+error. No issues after renaming the property to languageOptions. Hello Angular?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Useful tools in Angular :
 
-## Code scaffolding
+*ngFor : a directive used to loop over an array, eg for different select options. Basically Angular's way of ForEach, mostly used in the template 
+side of things.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Binding the input data to the form : We use the FormsModule for this. Import and add it to app.module.ts
+Important stuff here: #formName="ngForm" -> binds all data in the form to a var formName we can use.
+#inputName="ngModel" ngModel to bind the inputs to ngModel?
+Important to note we need a name attribute or it wont work.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+{{ formName.value | json }} -> this to check if the data is bound.
