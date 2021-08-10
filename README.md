@@ -29,3 +29,14 @@ What we want is 2 way binding! C to V and V to C
 2 way binding syntax in Angular : [()], and we can use the directive ngModel,so [(ngModel)], we bind our fields to the ngModel property
 we need to import since ngModel isnt a known property on Input so we need a dependency.
 
+WARNING : forgot to change #inputname template variables to my actual property names. Because of this I was struggling with form validation.
+<input  required [class.error]="firstName.invalid && firstName.touched" type="text" name="firstname" #firstName="ngModel" [(ngModel)]="friendModel.firstName"/>
+
+is what we want
+
+<input  required [class.error]="friendModel.firstName.invalid && firstName.touched" type="text" name="firstname" #inputName="ngModel" [(ngModel)]="friendModel.firstName"/>
+
+is what we had. Make sure to change the #inputName so we can use the properties!
+
+
+

@@ -11,4 +11,5 @@ import {  Friend } from './friend';
 export class AppComponent {
     languageOptions = ["C#","PHP","JAVASCRIPT","PYTHON"];
     friendModel = new Friend("","","",0,"");
+    
 }

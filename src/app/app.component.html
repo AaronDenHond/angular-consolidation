@@ -1,21 +1,56 @@
-{{ formName.value | json }}
+<form action="" #formName="ngForm" novalidate>
+  <label for="firstname">First Name</label><br />
 
-<form action="" #formName="ngForm" >
-  <label for="firstname">First Name</label><br>
-  
-  <input type="text" name="firstname" #inputName="ngModel" [(ngModel)]="friendModel.firstName"/><br>
-  <label for="lastname" >Last Name</label><br>
-  <input type="text" name="lastname" #inputName="ngModel" [(ngModel)]="friendModel.lastName"/><br>
-  <label for="email">Email</label><br>
-  <input type="text" name="email" #inputName="ngModel" [(ngModel)]="friendModel.email" /><br>
-  <label for="telephone" >Telephone Number</label><br>
-  <input type="number" name="telephone" #inputName="ngModel" [(ngModel)]="friendModel.telephone"/><br>
-  <label for="favlang">Favourite language</label><br>
-  <select name="language" #inputName="ngModel" [(ngModel)]="friendModel.language">
-  <option *ngFor="let language of languageOptions">{{language}}</option>
+  <input
+    required
+    [class.error]="firstName.invalid && firstName.touched"
+    type="text"
+    name="firstname"
+    #firstName="ngModel"
+    [(ngModel)]="friendModel.firstName"
+    pattern="[a-zA-Z]*"
+  /><br />
+  <label for="lastname">Last Name</label><br />
+  <input
+    required
+    [class.error]="lastName.invalid && lastName.touched"
+    type="text"
+    name="lastname"
+    #lastName="ngModel"
+    [(ngModel)]="friendModel.lastName"
+    pattern="[a-zA-Z]*"
+  /><br />
+  <label for="email">Email</label><br />
+  <input
+    required
+    [class.error]="email.invalid && email.touched"
+    type="text"
+    name="email"
+    #email="ngModel"
+    [(ngModel)]="friendModel.email"
+    pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+  /><br />
+  <label for="telephone">Telephone Number</label><br />
+  <input
+    required
+    [class.error]="telephone.invalid && telephone.touched"
+    pattern="^[0-9]*[1-9][0-9]*$"
+    type="number"
+    name="telephone"
+    #telephone="ngModel"
+    [(ngModel)]="friendModel.telephone"
+  /><br />
+  <label for="favlang">Favourite Language</label><br />
+  <select
+    required
+    [class.error]="language.invalid && language.touched"
+    name="language"
+    #language="ngModel"
+    [(ngModel)]="friendModel.language"
+  >
+    <option *ngFor="let language of languageOptions">{{ language }}</option>
   </select>
-  <br>
-  <br>
-  <button type="submit">Submit</button>
+  <br />
+  <br />
+  <button [disabled]="formName.invalid" type="submit">Submit</button>
 </form>
-
