@@ -49,4 +49,4 @@ first order of business is making an addFriend services and setting up the neces
 to do http requests, importing HttpClient module etc...
 
 WARNING: import HttpClientModule, but use HttpClient when typehinting! Had some bizarre mix and it messed up everything.
-
+Fetch: remember to add the property allFriends in the AppComponent class!
