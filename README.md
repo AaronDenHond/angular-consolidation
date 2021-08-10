@@ -38,5 +38,15 @@ is what we want
 
 is what we had. Make sure to change the #inputName so we can use the properties!
 
+Dont use the function keyword when adding methods in the AppComponent class. Just the name.
 
+the 'backend' side of things.
+(onSubmit)="" is basically an eventlistener and fires the value (a function usually) on submit. For example console logging the friendModel data.
+
+Services : we use services to add stuff to our server, in this case our friend
+
+first order of business is making an addFriend services and setting up the necessary stuff
+to do http requests, importing HttpClient module etc...
+
+WARNING: import HttpClientModule, but use HttpClient when typehinting! Had some bizarre mix and it messed up everything.
 

@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-const PORT = 6969;
+const PORT = 9001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}) );
@@ -23,9 +23,18 @@ let allFriends = [{fName: 'Coach', lName: 'Tim', email: 'tim.broos@becode.org', 
 app.get('/', function (request, response) {
     response.send('Hello from server');
 });
+app.get('/allFriends', function (request, response) {
+    response.send(allFriends);
+});
+//routing met GET request. We vragen hier om de array allFriends te displayen in een response.
 
 app.post('/', function (request, response) {
     response.status(200).send({"message": "Data received"});
+});
+
+app.post('/addFriend', function (request, response) {
+    allFriends.push(request.body);
+    
 });
 
 
