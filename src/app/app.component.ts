@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {  Friend } from './friend';
 
 
 
@@ -10,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     languageOptions = ["C#","PHP","JAVASCRIPT","PYTHON"];
+    friendModel = new Friend("","","",0,"");
 }

@@ -3,15 +3,15 @@
 <form action="" #formName="ngForm" >
   <label for="firstname">First Name</label><br>
   
-  <input type="text" name="firstname" #inputName="ngModel" ngModel/><br>
+  <input type="text" name="firstname" #inputName="ngModel" [(ngModel)]="friendModel.firstName"/><br>
   <label for="lastname" >Last Name</label><br>
-  <input type="text" name="lastname" #inputName="ngModel" ngModel/><br>
+  <input type="text" name="lastname" #inputName="ngModel" [(ngModel)]="friendModel.lastName"/><br>
   <label for="email">Email</label><br>
-  <input type="text" name="email" #inputName="ngModel" ngModel /><br>
+  <input type="text" name="email" #inputName="ngModel" [(ngModel)]="friendModel.email" /><br>
   <label for="telephone" >Telephone Number</label><br>
-  <input type="number" name="telephone" #inputName="ngModel" ngModel/><br>
+  <input type="number" name="telephone" #inputName="ngModel" [(ngModel)]="friendModel.telephone"/><br>
   <label for="favlang">Favourite language</label><br>
-  <select name="language" #inputName="ngModel" ngModel>
+  <select name="language" #inputName="ngModel" [(ngModel)]="friendModel.language">
   <option *ngFor="let language of languageOptions">{{language}}</option>
   </select>
   <br>
